@@ -10,13 +10,12 @@ on:
     branches: [ "main" ]
 
 jobs:
+  init:
+    uses: ./.github/workflows/common-setup.yml
 
-  build:
-  
+  build:  
     runs-on: ubuntu-latest
     steps:  
-    - name: Common setup
-      uses: lantoli/github-actions-go/.github/workflows/common-setup.yml@master
 
     - name: Build
       run: go build -v ./...
