@@ -14,12 +14,9 @@ jobs:
   build:
   
     runs-on: ubuntu-latest
-    steps:
-    - name: Check out code
-      uses: actions/checkout@v4
-  
+    steps:  
     - name: Common setup
-      uses: ./.github/workflows/common-setup.yml
+      uses: lantoli/github-actions-go/.github/workflows/common-setup.yml@master
 
     - name: Build
       run: go build -v ./...
